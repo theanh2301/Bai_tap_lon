@@ -1,10 +1,8 @@
 const CONFIG = {
     titleWeb: "Gửi người ấy",
     introTitle: 'Dịu Linh',
-    introDesc: `Trái đất vốn lạ thường
-    Mà sao em cứ đi nhầm đường
-    Lạc vào tim anh lẻ loi
-    Đằng sau chữ yêu đây là thương`,
+    introDesc: `Ao thì có bờ, sông thì có bến.
+                Còn tớ một mình đang chờ cậu mở lòng với tớ đây.`,
     btnIntro: '^^HiHi^^',
     title: 'Phải chăng tui đã yêu ngay từ cái nhìn đầu tiên 🥰',
     desc: 'Phải chăng tui đã say ngay từ lúc thấy nụ cười ấy ',
