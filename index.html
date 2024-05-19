@@ -1,150 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Heart</title>
-  <link rel="shortcut icon" type="img\png" href="favicon.jpg" style="border-radius: 50%">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-    }
+    <title id="titleWeb"></title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/img.png">
 
-    .container {
-      padding: 20px;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-    }
-
-    .buttons {
-      margin: 20px;
-    }
-
-    button {
-      font-size: 18px;
-      padding: 10px 20px;
-      margin: 5px;
-    }
-
-    .popup {
-      display: none;
-      background-color: #f9f9f9;
-      border: 1px solid #ccc;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 999;
-    }
-    body {
-      font-family: 'Great Vibes', cursive;
-      text-align: center;
-      margin: 0;
-      background-color: rgba(255, 194, 204, 0.97);/* Soft pastel color for the background */
-    }
-
-    .container {
-      padding: 30px;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 30px;
-      color: #e91e63; /* Romantic color for the heading */
-    }
-
-    .buttons {
-      margin: 20px;
-    }
-
-    button {
-      font-size: 20px;
-      padding: 12px 24px;
-      margin: 10px;
-      border: none;
-      border-radius: 20px;
-      background-color: #ff4081; /* Romantic color for the buttons */
-      color: #fff;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #ff5c8d; /* Lighter shade on hover for a soft effect */
-    }
-
-    .popup {
-      display: none;
-      background-color: #fff;
-      border: 1px solid #e91e63; /* Romantic color for the border */
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 999;
-      font-family: 'Dancing Script', cursive;
-      font-size: 24px;
-      color: #e91e63; /* Romantic color for the popup text */
-    }
-
-    /* Add a smooth fade-in animation for the popup */
-    .popup.fade-in {
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    img {
-      display: block;
-      margin: 0 auto;
-      width: 25%;
-    }
-  </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/spinload.css">
+    <link rel="stylesheet" type="text/css" href=" https://fonts.googleapis.com/css?family=Pacifico" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-<div class="container">
-  <h1>Làm bạn gái tớ nhé.</h1>
-  <img src="https://media.tenor.com/zGm5acSjHCIAAAAM/cat-begging.gif">
-  <div class="buttons">
-    <button id="no-btn">No</button>
-    <button id="yes-btn"> <a href="heart.html" style="text-decoration: none; color: white">Yes</a></button>
-  </div>
-  <div class="popup" id="popup">
-    <p>Aww, thank you!</p>
-  </div>
-</div>
-<script>
-  const noButton = document.getElementById("no-btn");
-  const yesButton = document.getElementById("yes-btn");
-  const popup = document.getElementById("popup");
 
-  noButton.addEventListener("mouseover", () => {
-    noButton.style.position = "absolute";
-    noButton.style.left = Math.random() * 80 + "vw";
-    noButton.style.top = Math.random() * 80 + "vh";
-  });
+<body onload="loadSound()">
+    <div class="wrapper">
+        <!-- Preloader -->
+        <div id="preloader">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
 
-  yesButton.addEventListener("click", () => {
-    popup.style.display = "block";
-  });
+<!--        <div id="bg"></div>-->
+        <div id = "bg">
+            <video playsinline autoplay muted loop>
+                <source src="polina.webm" type="video/webm">
+                <source src="sound/video2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="content">
+            <header>
+                <h2 id="title"></h2>
+                <h4 id="desc"></h4>
+            </header>
+            <img src="img/cute.jpeg" style="width: 40%; height: 40%; margin-right: auto; margin-left: auto;
+             object-fit: cover ;display: block; border-radius: 48%">
+            <button id="yes" type="button" class="btn btn-danger btn-lg"> </button>
+            <button id="no" type="button" class="btn btn-info btn-lg"></button>
+        </div>
 
-  popup.addEventListener("click", () => {
-    popup.style.display = "none";
-  });
 
-  // Hide the popup initially
-  popup.style.display = "none";
 
-</script>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="./config.js"></script>
+    <script src="./js/main.js"></script>
+
+<!--    <script>-->
+<!--        function loadSound() {-->
+<!--            var audio = new Audio('sound/sound.mp3');-->
+<!--            audio.play();-->
+<!--        }-->
+<!--    </script>-->
 </body>
+
 </html>
